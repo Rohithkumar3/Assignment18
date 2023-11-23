@@ -6,50 +6,6 @@ using System.Threading.Tasks;
 
 namespace Assignment18
 {
-    /*  public class Laptop : IConnectable, IRechargeable, IDisplayable
-      {
-           bool IsConnected;
-          int batteryLevel;
-          string displayInfo;
-
-          public Laptop()
-          {
-              IsConnected = false;
-              batteryLevel = 0;
-              displayInfo = "Laptop Screen";
-          }
-
-          public bool Connect()
-          {
-              if (!IsConnected)
-              {
-                  Console.WriteLine("Laptop connected.");
-                  IsConnected = true;
-              }
-              else
-              {
-                  Console.WriteLine("Laptop is already connected.");
-              }
-              return IsConnected;
-          }
-
-          public void Charge(int minutes)
-          {
-              Console.WriteLine($"Charging Laptop for {minutes} minutes.");
-              batteryLevel += minutes / 5;
-              if (batteryLevel > 100)
-              {
-                  batteryLevel = 100;
-              }
-          }
-
-          public string Display()
-          {
-              Console.WriteLine($"Displaying information on Laptop: {displayInfo}");
-              return displayInfo;
-          }
-      }*/
-
     internal class Laptop : IConnectable, IRechargeable, IDisplayable
     {
         public string Brand { get; set; }
@@ -63,9 +19,8 @@ namespace Assignment18
         public bool Connect()
         {
             if (!IsConnected)
-            {
-                Console.WriteLine($"Connecting to {Brand} Laptop...");
-                // Simulate connection process
+            { 
+                Console.WriteLine($"Connecting to {Brand} Laptop.");
                 IsConnected = true;
                 return true;
             }
@@ -79,8 +34,7 @@ namespace Assignment18
         {
             if (IsConnected)
             {
-                Console.WriteLine($"Charging {Brand} Laptop for {minutes} minutes...");
-                // Simulate charging process
+                Console.WriteLine($"Charging {Brand} Laptop for {minutes} minutes");          
                 BatteryLevel += minutes * 3 / 2;
             }
             else

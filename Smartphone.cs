@@ -6,50 +6,6 @@ using System.Threading.Tasks;
 
 namespace Assignment18
 {
-    /*    public class Smartphone : IConnectable, IRechargeable, IDisplayable
-        {
-             bool IsConnected;
-             int batteryLevel;
-             string displayInfo;
-
-            public Smartphone()
-            {
-                IsConnected = false;
-                batteryLevel = 0;
-                displayInfo = "Smartphone Screen";
-            }
-
-            public bool Connect()
-            {
-                if (!IsConnected)
-                {
-                    Console.WriteLine("Smartphone connected.");
-                    IsConnected = true;
-                }
-                else
-                {
-                    Console.WriteLine("Smartphone is already connected.");
-                }
-                return IsConnected;
-            }
-
-            public void Charge(int minutes)
-            {
-                Console.WriteLine($"Charging Smartphone for {minutes} minutes.");
-                batteryLevel += minutes / 10;
-                if (batteryLevel > 100)
-                {
-                    batteryLevel = 100;
-                }
-            }
-
-            public string Display()
-            {
-                Console.WriteLine($"Displaying information on Smartphone: {displayInfo}");
-                return displayInfo;
-            }
-        }*/
-
     internal class Smartphone : IConnectable, IRechargeable, IDisplayable
 
     {
@@ -66,7 +22,7 @@ namespace Assignment18
         {
             if (!IsConnected)
             {
-                Console.WriteLine($"Connecting to {Model}...");
+                Console.WriteLine($"Connecting to {Model}");
                 IsConnected = true;
                 return true;
             }
@@ -80,7 +36,7 @@ namespace Assignment18
         {
             if (IsConnected)
             {
-                Console.WriteLine($"Charging {Model} for {minutes} minutes...");
+                Console.WriteLine($"Charging {Model} for {minutes} minutes");
                 BatteryLevel += minutes * 7 / 2;
             }
             else
